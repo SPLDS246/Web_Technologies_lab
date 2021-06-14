@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Checking for Validation</title>
+	<script type="text/javascript">
+		function validation()
+		{
+          var x=f.uname.value;
+          var len=x.length;
+          var val=x.charCodeAt(0); 
+          var p=f.pwd.value;
+          var a=f.Email.value;
+          var atpos=a.indexOf("@");
+          var dotpos=a.lastIndexOf(".");
+          if(len<6||x==""||x==null)
+          {
+            alert("check your username! It must be minimum 6 characters");
+          }
+          else if(val<65 || val>90 && val<97 || val>122)
+          {
+            alert("username must be begin with an alphabet");
+            return false;
+          } 
+          else if(p==" " || p.length<6 )
+          {
+            alert("Password should be greater than 6 characters!");
+            return false;
+          }
+          else if(atpos<6 || dotpos<atpos+6 || dotpos+2>=a.length)
+          { 
+            alert("Not a Valid email id");
+            return false;
+          }
+          else
+            alert("Congratulations! You have submitted successfully");
+        }  
+	</script>
+</head>
+<body bgcolor="cyan">
+	<h1>Registration Form</h1>
+	<form name="f" action="" onsubmit="return validation();" method="post">
+		<div class="container">
+		  <label for="Username">Username </label>
+		  <input type="text" id="uname" name="uname" placeholder="Enter Username"><br><br>
+
+		  <label for="Password">Password </label>
+		  <input type="password" id="pwd" name="pwd" placeholder="Enter Password"><br><br>
+
+		  <label for="Email">Email Id </label>
+		  <input type="text" id="Email" name="Email" placeholder="Enter Email Id"><br><br>
+
+		  <label for="text">Phone Number</label>
+		  <input type="number" id="pno" name="pno" placeholder="Enter Phone Number"><br><br>
+
+		  <label for="gender">Gender </label><br>
+		  <input type="radio" id="male" name="gender" value="male">
+          <label for="male">Male</label><br>
+          <input type="radio" id="female" name="gender" value="female">
+          <label for="female">Female</label><br><br>
+
+		  <label for="Date">Date of Birth</label>
+		  <input type="Date" name="date"><br><br>
+
+		  <label for="Lang">Languages Known:</label><br>
+		  <input type="checkbox" id="lang1" name="lang1" value="English">
+          <label for="lang1"> English</label><br>
+          <input type="checkbox" id="lang2" name="lang2" value="Telugu">
+          <label for="lang2"> Telugu</label><br>
+          <input type="checkbox" id="lang3" name="lang3" value="Hindi">
+          <label for="lang3"> Hindi</label><br>
+          <input type="checkbox" id="lang4" name="lang4" value="Tamil">
+          <label for="lang4">Tamil</label><br><br>
+
+	   	  <label for="Address">Address</label>
+		  <input type="text" id="add" name="add" placeholder="Enter Address"><br><br>
+
+		  <input type="Submit" name="Submit">
+		</div>
+	</form>
+</body>
+</html>
